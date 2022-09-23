@@ -26,7 +26,7 @@ pyautogui.click(x=530, y=844)
 time.sleep(10)
 
 #Coleta ultimo arquivo que foi feito download
-origem = r'C:\Users\Jonatas\Downloads'
+origem = r'C:\Users\jonat\Downloads'
 destino = r'C:\Users\Jonatas\Documents\Projeto 1 - Automação de Análise de Dados\Histórico Base de Dados'
 lista = os.listdir(origem)              #lista os arquivos
 list_arq_dat = []                       #lista vazia para receber apenas a data e o arquivo
