@@ -1,5 +1,4 @@
 import pyautogui
-
 import time
 import pyperclip
 import os
@@ -25,7 +24,7 @@ import shutil
 # pyautogui.click(x=530, y=844)
 # time.sleep(10)
 
-#Coleta ultimo arquivo que foi feito download
+#Coleta ultimo arquivo que foi feito download (pasta de origem)
 origem = r'C:\Users\jonat\Downloads'
 destino = r'C:\Users\jonat\Documents\Meus Projetos\Python\Projeto 1 Automação de Análise de Dados\Analise-de-Dados\Histórico Base de Dados'
 lista = os.listdir(origem)              #lista os arquivos
@@ -37,12 +36,23 @@ list_arq_dat.sort(reverse=True)
 ultimo_arq = list_arq_dat[0]            #primeiro índice da lista de arquivos
 print(ultimo_arq[1])                   #segundo índice sobre a linha coletada na lista de arquivos
 
-#move arquivo para outra pasta para manter um backup/log
-
+#Mostra todos os arquivos sobre a pasta historico base de dados (pasta destino)
 lista2 = os.listdir(destino)
-print(lista2)
-for cont, arch in enumerate(lista2):
-    if 'Vendas - Dez.xlsx' in lista2:
-        os.rename(r'C:\Users\jonat\Downloads\Vendas - Dez.xlsx', r'C:\Users\jonat\Documents\Meus Projetos\Python\Projeto 1 Automação de Análise de Dados\Analise-de-Dados\Histórico Base de Dados/Vendas - Dez - Copy'+str(cont)+'.xlsx')
-    # else:
-    #     shutil.move(f'{origem}/{ultimo_arq[1]}', destino)
+list_arq2 = []
+for arq in lista2:
+    data2 = os.path.getctime(f"{destino}/{arq}")
+    list_arq2.append((data2, arq))
+list_arq2.sort(reverse=True)
+print(list_arq2)
+
+#move arquivo para outra pasta para manter um backup/log
+if 'Vendas - Dez.xlsx' not in list_arq2 or 'Vendas - Dez - Copy.xlsx' not in list_arq2:
+    shutil.move(f'{origem}/{ultimo_arq[1]}', destino)
+else:
+    cont = 0
+    for line in list_arq2:
+        if 'Vendas - Dez.xlsx' in list_arq2 or 'Vendas - Dez - Copy.xlsx' in list_arq2:
+            cont += 1
+            print(cont)
+            # cont += 1
+            # os.rename(r'C:\Users\jonat\Downloads\Vendas - Dez.xlsx', r'C:\Users\jonat\Documents\Meus Projetos\Python\Projeto 1 Automação de Análise de Dados\Analise-de-Dados\Histórico Base de Dados/Vendas - Dez - Copy' + str(cont) + '.xlsx')
