@@ -24,19 +24,19 @@ import shutil
 # pyautogui.click(x=530, y=844)
 # time.sleep(10)
 
-#Coleta ultimo arquivo que foi feito download (pasta de origem)
+# Coleta ultimo arquivo que foi feito download (pasta de origem)
 origem = r'C:\Users\jonat\Downloads'
 destino = r'C:\Users\jonat\Documents\Meus Projetos\Python\Projeto 1 Automação de Análise de Dados\Analise-de-Dados\Histórico Base de Dados'
-lista = os.listdir(origem)              #lista os arquivos
-list_arq_dat = []                       #lista vazia para receber apenas a data e o arquivo
+lista = os.listdir(origem)  # lista os arquivos
+list_arq_dat = []  # lista vazia para receber apenas a data e o arquivo
 for arquivo in lista:
     data = os.path.getctime(f"{origem}/{arquivo}")
     list_arq_dat.append((data, arquivo))
 list_arq_dat.sort(reverse=True)
-ultimo_arq = list_arq_dat[0]            #primeiro índice da lista de arquivos
-print(ultimo_arq[1])                   #segundo índice sobre a linha coletada na lista de arquivos
+ultimo_arq = list_arq_dat[0]  # primeiro índice da lista de arquivos
+print(ultimo_arq[1])  # segundo índice sobre a linha coletada na lista de arquivos
 
-#Mostra todos os arquivos sobre a pasta historico base de dados (pasta destino)
+# Mostra todos os arquivos sobre a pasta historico base de dados (pasta destino)
 lista2 = os.listdir(destino)
 list_arq2 = []
 for arq in lista2:
@@ -45,14 +45,14 @@ for arq in lista2:
 list_arq2.sort(reverse=True)
 print(list_arq2)
 
-#move arquivo para outra pasta para manter um backup/log
-if 'Vendas - Dez.xlsx' not in list_arq2 or 'Vendas - Dez - Copy.xlsx' not in list_arq2:
-    shutil.move(f'{origem}/{ultimo_arq[1]}', destino)
-else:
-    cont = 0
-    for line in list_arq2:
-        if 'Vendas - Dez.xlsx' in list_arq2 or 'Vendas - Dez - Copy.xlsx' in list_arq2:
-            cont += 1
-            print(cont)
-            # cont += 1
-            # os.rename(r'C:\Users\jonat\Downloads\Vendas - Dez.xlsx', r'C:\Users\jonat\Documents\Meus Projetos\Python\Projeto 1 Automação de Análise de Dados\Analise-de-Dados\Histórico Base de Dados/Vendas - Dez - Copy' + str(cont) + '.xlsx')
+# move arquivo para outra pasta para manter um backup/log
+try:
+    if 'Vendas - Dez.xlsx' not in list_arq2 and 'Vendas - Dez - Copy.xlsx' not in list_arq2:
+        new_path = shutil.move(f"{origem}/{ultimo_arq[1]}", destino)
+except:
+    print('Arquivo já existe')
+    os.rename(r'C:\Users\jonat\Downloads\Vendas - Dez.xlsx', r'C:\Users\jonat\Documents\Meus Projetos\Python\Projeto 1 Automação de Análise de Dados\Analise-de-Dados\Histórico Base de Dados/Vendas - Dez - Copy.xlsx')
+    print('Arquivo renomeado e movido para pasta de  Destino')
+
+# new_path = shutil.move(f"{origem}/{ultimo_arq[1]}", destino)
+# os.rename(r'C:\Users\jonat\Downloads\Vendas - Dez.xlsx', r'C:\Users\jonat\Documents\Meus Projetos\Python\Projeto 1 Automação de Análise de Dados\Analise-de-Dados\Histórico Base de Dados/Vendas - Dez - Copy.xlsx')
