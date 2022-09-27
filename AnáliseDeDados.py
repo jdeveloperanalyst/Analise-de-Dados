@@ -54,5 +54,5 @@ except:
     os.rename(r'C:\Users\jonat\Downloads\Vendas - Dez.xlsx', r'C:\Users\jonat\Documents\Meus Projetos\Python\Projeto 1 Automação de Análise de Dados\Analise-de-Dados\Histórico Base de Dados/Vendas - Dez - Copy.xlsx')
     print('Arquivo renomeado e movido para pasta de  Destino')
 
-new_path = shutil.move(f"{origem}/{ultimo_arq[1]}", destino)
-os.rename(r'C:\Users\jonat\Downloads\Vendas - Dez.xlsx', r'C:\Users\jonat\Documents\Meus Projetos\Python\Projeto 1 Automação de Análise de Dados\Analise-de-Dados\Histórico Base de Dados/Vendas - Dez - Copy.xlsx')
+# new_path = shutil.move(f"{origem}/{ultimo_arq[1]}", destino)
+# os.rename(r'C:\Users\jonat\Downloads\Vendas - Dez.xlsx', r'C:\Users\jonat\Documents\Meus Projetos\Python\Projeto 1 Automação de Análise de Dados\Analise-de-Dados\Histórico Base de Dados/Vendas - Dez - Copy.xlsx')
