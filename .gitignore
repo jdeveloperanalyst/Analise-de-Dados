@@ -2,3 +2,8 @@
 .idea/workspace.xml
 .idea/dictionaries/jonat.xml
 .idea/inspectionProfiles/Project_Default.xml
+*.iml
+.idea/inspectionProfiles/profiles_settings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
