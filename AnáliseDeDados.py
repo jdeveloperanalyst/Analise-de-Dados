@@ -4,25 +4,25 @@ import pyperclip
 import os
 import shutil
 
-# #abre o navegador
-# pyautogui.PAUSE = 1
-# pyautogui.press('winleft')
-#
-# pyautogui.write('chrome')
-# pyautogui.press('enter')
-# pyautogui.hotkey('ctrl', 't')
+#abre o navegador
+pyautogui.PAUSE = 1
+pyautogui.press('winleft')
+
+pyautogui.write('chrome')
+pyautogui.press('enter')
+pyautogui.hotkey('ctrl', 't')
 
 #abre o drive
-# link = 'https://drive.google.com/drive/folders/1KlpEd8rfJiWP237HW8zEhobL44vBE3DA'
-# pyperclip.copy(link)
-# pyautogui.hotkey('ctrl', 'v')
-# pyautogui.press('enter')
-# time.sleep(7)
+link = 'https://drive.google.com/drive/folders/1KlpEd8rfJiWP237HW8zEhobL44vBE3DA'
+pyperclip.copy(link)
+pyautogui.hotkey('ctrl', 'v')
+pyautogui.press('enter')
+time.sleep(7)
 
 #faz download da base de dados
-# pyautogui.click(x=387, y=382, button='right')
-# pyautogui.click(x=530, y=844)
-# time.sleep(10)
+pyautogui.click(x=387, y=382, button='right')
+pyautogui.click(x=530, y=844)
+time.sleep(10)
 
 #Coleta ultimo arquivo que foi feito download (pasta de origem)
 origem = r'C:\Users\jonat\Downloads'
@@ -43,25 +43,9 @@ print(lista2)
 #move arquivo para outra pasta para manter um backup/log
 if 'Vendas - Dez.xlsx' not in lista2:
     shutil.move(f"{origem}/{ultimo_arq[1]}", destino)
-elif 'Vendas - Dez.xlsx' in lista2:
-    os.rename(r'C:\Users\jonat\Downloads\Vendas - Dez.xlsx', r'C:\Users\jonat\Downloads\Vendas - Dez - Copy.xlsx')
-    time.sleep(5)
-    shutil.move(f"{origem}/{ultimo_arq[1]}", destino)
-
-
-
-
-
-# try:
-#     if 'Vendas - Dez.xlsx' not in list_arq2:
-#         new_path = shutil.move(f"{origem}/{ultimo_arq[1]}", destino)
-# except:
-#     print('Arquivo já existe')
-#     cont = 0
-#     for line in list_arq2:
-#         if 'Vendas - Dez.xlsx' in line[1]:
-#             os.rename(r'C:\Users\jonat\Downloads\Vendas - Dez.xlsx', r'C:\Users\jonat\Documents\Meus Projetos\Python\Projeto 1 Automação de Análise de Dados\Analise-de-Dados\Histórico Base de Dados/Vendas - Dez - Copy.xlsx')
-#         elif 'Vendas - Dez - Copy.xlsx' in line[1]:
-#             cont += 1
-#             os.rename(r'C:\Users\jonat\Downloads\Vendas - Dez.xlsx', fr'C:\Users\jonat\Documents\Meus Projetos\Python\Projeto 1 Automação de Análise de Dados\Analise-de-Dados\Histórico Base de Dados/Vendas - Dez - Copy{cont}.xlsx')
-#     print('Arquivo renomeado e movido para pasta de  Destino')
+else:
+    cont = 0
+    for linha in lista2:
+        if 'Vendas' in linha:
+            cont += 1
+    shutil.move(f"{origem}/{ultimo_arq[1]}", f'{destino}/Vendas - Dez({cont}).xlsx')
