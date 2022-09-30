@@ -49,4 +49,3 @@ else:
         if 'Vendas' in linha:
             cont += 1
     shutil.move(f"{origem}/{ultimo_arq[1]}", f'{destino}/Vendas - Dez({cont}).xlsx')
-print('teste')
