@@ -44,7 +44,7 @@ time.sleep(5)
 
 #Criando um novo e-mail
 pyautogui.click(x=78, y=161)
-pyautogui.write('jonatas1200@icloud.com')
+pyautogui.write('jdeveloperanalyst@gmail.com')
 pyautogui.press('tab')
 pyautogui.press('tab')
 assunto = 'Relatório de Vendas de Ontem'
