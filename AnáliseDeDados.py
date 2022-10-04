@@ -3,6 +3,7 @@ import time
 import pyperclip
 import os
 import shutil
+import pandas as pd
 
 #abre o navegador
 pyautogui.PAUSE = 1
@@ -24,6 +25,46 @@ pyautogui.click(x=387, y=382, button='right')
 pyautogui.click(x=530, y=844)
 time.sleep(10)
 
+#Faz a leitura da nossa base de dados
+db = pd.read_excel(r'C:\Users\jonat\Downloads\Vendas - Dez.xlsx')
+print(db)
+
+
+#Calcula Faturamento e Quantidade de Produtos
+faturamento = db['Valor Final'].sum()
+qtde_produtos = db['Quantidade'].sum()
+print(faturamento, qtde_produtos)
+
+
+#abrindo o gmail em nova aba
+pyautogui.hotkey('ctrl', 't')
+pyautogui.write('mail.google.com')
+pyautogui.press('enter')
+time.sleep(5)
+
+#Criando um novo e-mail
+pyautogui.click(x=78, y=161)
+pyautogui.write('jonatas1200@icloud.com')
+pyautogui.press('tab')
+pyautogui.press('tab')
+assunto = 'Relatório de Vendas de Ontem'
+pyperclip.copy(assunto)
+pyautogui.hotkey('ctrl', 'v')
+pyautogui.press('tab')
+texto = f'''
+Prezados, bom dia!
+
+O faturamento de ontem foi de: R${faturamento:,.2f}.
+A quantidade de produtos foi de: {qtde_produtos:,}
+
+Abs
+Jonatas Silva'''
+pyperclip.copy(texto)
+pyautogui.hotkey('ctrl', 'v')
+pyautogui.press('tab')
+pyautogui.press('enter')
+
+
 #Coleta ultimo arquivo que foi feito download (pasta de origem)
 origem = r'C:\Users\jonat\Downloads'
 destino = r'C:\Users\jonat\Documents\Meus Projetos\Python\Projeto 1 Automação de Análise de Dados\Analise-de-Dados\Histórico Base de Dados'
@@ -40,7 +81,7 @@ print(ultimo_arq[1])  #segundo índice sobre a linha coletada na lista de arquiv
 lista2 = os.listdir(destino)
 print(lista2)
 
-#move arquivo para outra pasta para manter um backup/log
+#Move arquivo para outra pasta para manter um backup/log
 if 'Vendas - Dez.xlsx' not in lista2:
     shutil.move(f"{origem}/{ultimo_arq[1]}", destino)
 else:
