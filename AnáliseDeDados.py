@@ -8,7 +8,6 @@ import pandas as pd
 #abre o navegador
 pyautogui.PAUSE = 1
 pyautogui.press('winleft')
-
 pyautogui.write('chrome')
 pyautogui.press('enter')
 pyautogui.hotkey('ctrl', 't')
