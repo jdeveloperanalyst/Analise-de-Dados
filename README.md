@@ -1,5 +1,5 @@
 [![GitHub](https://img.shields.io/github/license/jdeveloperanalyst/Analise-de-Dados)](https://github.com/jdeveloperanalyst/Analise-de-Dados/blob/master/LICENSE)
-
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-05122A?style=flat&logo=linkedin)](https://www.linkedin.com/in/jonatas-silva-dev-6a6f6e/)
 # Automação de Análise de Dados
 
 O objetivo deste projeto é criar uma ferramenta automatizada de geração e envio automático de relatórios para um destinatário pré-definido.
@@ -26,8 +26,5 @@ https://user-images.githubusercontent.com/112918533/194374643-eb894dab-c296-4e27
 https://user-images.githubusercontent.com/112918533/194389643-ac7f8709-a0e4-41bc-ba95-625eb570d089.mp4
 
 
-<br>
-<br>
-<h5 align="center">
-  :construction: Projeto README :rocket: em construção :construction:
-</h5>
+***
+Sendo assim, finalizo aqui meu <kbd>primeiro projeto</kbd> feito com linguagem de programação [![Python 3](https://img.shields.io/badge/-Python%203-05122A?style=flat&logo=python)](https://www.python.org/) e para versionamento [![Git](https://img.shields.io/badge/-Git-05122A?style=flat&logo=git)](https://git-scm.com/) e [![GitHub](https://img.shields.io/badge/-GitHub-05122A?style=flat&logo=github)](https://github.com/).
