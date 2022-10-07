@@ -28,3 +28,7 @@ https://user-images.githubusercontent.com/112918533/194389643-ac7f8709-a0e4-41bc
 
 ***
 Sendo assim, finalizo aqui meu <kbd>primeiro projeto</kbd> feito com linguagem de programação [![Python 3](https://img.shields.io/badge/-Python%203-05122A?style=flat&logo=python)](https://www.python.org/) e para versionamento [![Git](https://img.shields.io/badge/-Git-05122A?style=flat&logo=git)](https://git-scm.com/) e [![GitHub](https://img.shields.io/badge/-GitHub-05122A?style=flat&logo=github)](https://github.com/).
+
+<br>
+
+> "A evolução faz parte do processo de quem almeja alcançar o sucesso."
