@@ -4,7 +4,7 @@
 
 O objetivo deste projeto é criar uma ferramenta automatizada de geração e envio automático de relatórios para um destinatário pré-definido.
 <br>
-#### Onde pode ser util?
+#### Onde pode ser útil?
 + Neste exemplo se trata de um relatório diário que precisa ser enviado para a diretoria ou pessoas envolvidas neste fluxo diariamente. Essa tarefa é repetitiva necessitando que um analista faça este processo manualmente.
 + Portanto, uma solução para o problema, é construir um código que reduza o trabalho operacional do analista, tornando-o mais eficiente.
 + O principal objetivo desse código é permitir uma melhor interpretação dos dados, em termos de qualidade e velocidade de análise.
