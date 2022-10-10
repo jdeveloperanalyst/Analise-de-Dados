@@ -2,7 +2,7 @@
 [![LinkedIn](https://img.shields.io/badge/-LinkedIn-05122A?style=flat&logo=linkedin)](https://www.linkedin.com/in/jonatas-silva-dev-6a6f6e/)
 # Automação de Análise de Dados
 
-O objetivo deste projeto é criar uma ferramenta automatizada de geração e envio automático de relatórios para um destinatário pré-definido.
+O objetivo deste projeto foi criar uma ferramenta automatizada de geração e envio automático de relatórios para um destinatário pré-definido.
 <br>
 #### Onde pode ser útil?
 + Neste exemplo se trata de um relatório diário que precisa ser enviado para a diretoria ou pessoas envolvidas neste fluxo diariamente. Essa tarefa é repetitiva necessitando que um analista faça este processo manualmente.
