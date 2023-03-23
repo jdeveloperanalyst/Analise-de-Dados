@@ -11,7 +11,7 @@ O objetivo deste projeto foi criar uma ferramenta automatizada de geração e en
 + Feito isto, o código disparará um e-mail de análise de indicadores para a diretoria ou pessoas envolvidas neste fluxo, automaticamente!
 ## Estrutura do código
 
-Inicialmente será mostrado sob o <kbd>vídeo abaixo</kbd> uma breve explicação por etapas sobre a <kbd>estrutura do código</kbd> que foi criada para o funcionamento desta automação.
+Inicialmente será mostrado sobre o <kbd>vídeo abaixo</kbd> uma breve explicação por etapas sobre a <kbd>estrutura do código</kbd> que foi criada para o funcionamento desta automação.
 <br>
 
 
